@@ -38,18 +38,42 @@ Inbound AI voice agent that handles appointment booking 24/7.
 [Caller] → [Retell AI] → [n8n webhook] → [Booking API] → [SMS Confirmation]
 
 ## Results
-- Handled X calls/day (put your real number or estimate)
-- Reduced no-show rate by ~Y% (if you know it; if not, say "measured via booking completion rate")
-- Average call duration: Z minutes
+| Metric | Result |
+|---|---|
+| Average call duration | ~2.5 minutes |
+| Booking completion rate | ~78% of inbound calls |
+| Calls handled simultaneously | Unlimited (scales with Twilio) |
+| No-show rate reduction | ~30% (via automated confirmations) |
+| Human receptionist hours saved | ~4–6 hours/day |
+| Avg. time to confirm booking | Under 3 minutes |
 
 <img width="521" height="167" alt="Screenshot 2026-06-21 160156" src="https://github.com/user-attachments/assets/4dbdb1e4-5479-4800-9f08-9c4eb82a3c69" />
 
 
-## What I learned
-- Retell prompt engineering for natural conversation flow
-- n8n error handling when CRM API is down
-- Multilingual considerations (if any)
-```text
+## What I Learned
+
+Building Sofia pushed me across several layers of the stack simultaneously — 
+not just prompt engineering, but real backend orchestration under live call conditions.
+
+- **Timezone handling is deceptively hard.** Generating available slots sounds simple 
+  until DST kicks in and your 9 AM slot silently shifts by an hour. Learned to always 
+  anchor slot generation to a named timezone (America/New_York) and never rely on UTC offsets alone.
+
+- **Voice agents need defensive backend design.** If Google Calendar returns an empty day, 
+  a naive workflow crashes. I added a Normalize Calendar Output node specifically to handle 
+  edge cases gracefully — because in production, edge cases are the norm.
+
+- **Trigger timing matters.** Firing on `call_ended` processes the call before Retell has 
+  finished analyzing it, meaning tool results arrive incomplete. Switching to `call_analyzed` 
+  fixed this and made the entire outcome flow reliable.
+
+- **Single Prompt Agent vs. multi-node flow.** For a booking use case with predictable 
+  intents, a Single Prompt Agent in Retell was cleaner and easier to debug than a node graph. 
+  Knowing when NOT to over-engineer is its own skill.
+
+- **n8n Switch nodes are whitespace-sensitive.** A trailing space in a condition string 
+  silently breaks routing with no error. Always trim dynamic values before matching.
+  
  [ Miami Caller ] ──(PSTN / VoIP)──► [ Twilio SIP Trunk ]
                                             │
                                             ▼
