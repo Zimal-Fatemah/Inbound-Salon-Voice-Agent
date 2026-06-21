@@ -20,7 +20,28 @@ Unlike basic "press 1 for hours" IVR trees, Sofia utilizes a **Single-Prompt LLM
 ---
 
 ## 🏛️ System Architecture
+# Voice Agent — Salon Booking (US Client)
 
+**Stack:** Retell AI (voice) + n8n (orchestration) + [Client CRM]
+
+## The Problem
+The salon was losing bookings because callers got voicemail during peak hours.
+
+## The Solution
+Inbound AI voice agent that handles appointment booking 24/7.
+
+## Call Flow
+[Caller] → [Retell AI] → [n8n webhook] → [Booking API] → [SMS Confirmation]
+
+## Results
+- Handled X calls/day (put your real number or estimate)
+- Reduced no-show rate by ~Y% (if you know it; if not, say "measured via booking completion rate")
+- Average call duration: Z minutes
+
+## What I learned
+- Retell prompt engineering for natural conversation flow
+- n8n error handling when CRM API is down
+- Multilingual considerations (if any)
 ```text
  [ Miami Caller ] ──(PSTN / VoIP)──► [ Twilio SIP Trunk ]
                                             │
