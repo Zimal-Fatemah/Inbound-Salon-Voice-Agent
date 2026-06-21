@@ -16,7 +16,9 @@
 
 Traditional salons lose up to 35% of their potential booking revenue due to unanswered calls during peak service hours. **Sofia** solves this by acting as an autonomous, 24/7 SIP-trunked receptionist. 
 
-Unlike basic "press 1 for hours" IVR trees, Sofia utilizes a **Single-Prompt LLM architecture** hooked into an event-driven `n8n` orchestration layer. She holds natural, turn-taking conversations, performs real-time calendar availability math against variable service durations, and writes directly to the business's Google Calendar.
+Unlike basic "press 1 for hours" IVR trees, Sofia utilizes a 
+**Single-Prompt LLM architecture** hooked into an event-driven `n8n` orchestration layer. She holds natural, turn-taking conversations, performs real-time calendar availability math against variable service durations, and writes directly to the business's Google Calendar.
+
 <img width="1600" height="900" alt="WhatsApp Image 2026-06-21 at 4 03 36 PM (1)" src="https://github.com/user-attachments/assets/2991fb63-b7af-488d-b894-48cac1636323" />
 ---
 
