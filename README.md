@@ -8,6 +8,8 @@
 > An event-driven, single-prompt conversational voice agent deployed for **LUX SALON (Miami, FL)** capable of handling concurrent customer bookings, calendar math, and live rescheduling over standard phone lines.
 
 **[View n8n Workflow Architecture](./n8n-workflows/LUX_Salon_Orchestration.json)** *(ID: `HO8OEQlxlyhDDS4w`)*
+<img width="1600" height="900" alt="WhatsApp Image 2026-06-21 at 4 03 36 PM (1)" src="https://github.com/user-attachments/assets/7eaeb5d4-557d-4deb-be43-7b67d4da2248" />
+
 
 ---
 
@@ -38,6 +40,9 @@ Inbound AI voice agent that handles appointment booking 24/7.
 - Reduced no-show rate by ~Y% (if you know it; if not, say "measured via booking completion rate")
 - Average call duration: Z minutes
 
+<img width="521" height="167" alt="Screenshot 2026-06-21 160156" src="https://github.com/user-attachments/assets/4dbdb1e4-5479-4800-9f08-9c4eb82a3c69" />
+
+
 ## What I learned
 - Retell prompt engineering for natural conversation flow
 - n8n error handling when CRM API is down
@@ -67,6 +72,9 @@ Inbound AI voice agent that handles appointment booking 24/7.
                      ▼                                             ▼
           [ Google Calendar API ]                       [ Google Calendar + Gmail ]
 ```
+
+<img width="1600" height="900" alt="WhatsApp Image 2026-06-21 at 4 03 37 PM" src="https://github.com/user-attachments/assets/b1cec401-a883-4d4d-91a7-1d21531f9028" />
+<img width="589" height="521" alt="WhatsApp Image 2026-06-21 at 4 03 37 PM (1)" src="https://github.com/user-attachments/assets/fa9e427c-2951-4c3c-b81f-9a5133b16613" />
 
 ### The Service Duration Matrix
 Sofia relies on an internal lookup table to prevent double-booking. When a user requests a slot, the system checks the calendar for an open window matching the exact duration of the requested service:
