@@ -73,6 +73,9 @@ not just prompt engineering, but real backend orchestration under live call cond
 
 - **n8n Switch nodes are whitespace-sensitive.** A trailing space in a condition string 
   silently breaks routing with no error. Always trim dynamic values before matching.
+
+  
+  
   
  [ Miami Caller ] ──(PSTN / VoIP)──► [ Twilio SIP Trunk ]
                                             │
@@ -97,8 +100,7 @@ not just prompt engineering, but real backend orchestration under live call cond
                      │                                             │
                      ▼                                             ▼
           [ Google Calendar API ]                       [ Google Calendar + Gmail ]
-```
-
+---
 <img width="1600" height="900" alt="WhatsApp Image 2026-06-21 at 4 03 37 PM" src="https://github.com/user-attachments/assets/b1cec401-a883-4d4d-91a7-1d21531f9028" />
 <img width="589" height="521" alt="WhatsApp Image 2026-06-21 at 4 03 37 PM (1)" src="https://github.com/user-attachments/assets/fa9e427c-2951-4c3c-b81f-9a5133b16613" />
 
