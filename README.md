@@ -6,6 +6,7 @@
 ![Google Calendar](https://img.shields.io/badge/Google_Calendar-4285F4?style=for-the-badge&logo=google-calendar&logoColor=white)
 
 > An event-driven, single-prompt conversational voice agent deployed for **LUX SALON (Miami, FL)** capable of handling concurrent customer bookings, calendar math, and live rescheduling over standard phone lines.
+<img width="1536" height="1024" alt="WhatsApp Image 2026-06-21 at 4 08 56 PM" src="https://github.com/user-attachments/assets/bc94932c-b84c-4065-9b75-c7005564e726" />
 
 **[View n8n Workflow Architecture](./n8n-workflows/LUX_Salon_Orchestration.json)** *(ID: `HO8OEQlxlyhDDS4w`)*
 <img width="1600" height="900" alt="WhatsApp Image 2026-06-21 at 4 03 36 PM (1)" src="https://github.com/user-attachments/assets/7eaeb5d4-557d-4deb-be43-7b67d4da2248" />
